@@ -139,8 +139,8 @@
 
 <body class="relative min-h-screen selection:bg-gold-500 selection:text-royal-950">
 
-  <!-- Background Music Audio Element (Replace 'music.mp3' with your file) -->
-  <audio id="wedding-audio" loop preload="auto">
+  <!-- Background Music Audio Element with Autoplay Enabled -->
+  <audio id="wedding-audio" autoplay loop preload="auto">
     <source src="music.mp3" type="audio/mpeg">
   </audio>
 
@@ -166,7 +166,7 @@
           </button>
         </div>
 
-        <!-- Custom Music Play/Pause Toggle -->
+        <!-- Music Play/Pause Toggle -->
         <button id="music-toggle" onclick="toggleCustomMusic()" title="Play Auspicious Music" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-gold-500/40 bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 text-xs font-serif transition shadow-sm">
           <i data-lucide="volume-2" id="music-icon" class="w-3.5 h-3.5"></i>
           <span id="music-text">
@@ -475,9 +475,9 @@
 
     </div>
 
-    <!-- Inviting Family & Elders Card with Bride's Address Included -->
+    <!-- Inviting Family & Elders Card (Includes Groom's and Bride's Elders) -->
     <div class="mt-8 royal-card-frame p-6 sm:p-8 bg-royal-950/60">
-      <div class="text-center max-w-3xl mx-auto">
+      <div class="text-center max-w-4xl mx-auto">
         <span class="text-xs text-gold-400 tracking-widest uppercase font-serif block mb-1">
           <span class="lang-te telugu-font">పెద్దల దివ్య ఆశీస్సులతో</span>
           <span class="lang-en hidden">With the Divine Blessings of Elders</span>
@@ -497,41 +497,90 @@
           </span>
         </p>
 
-        <!-- 3-Column Family Details (Groom's Family, Bride's Family, Elders) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 pt-6 border-t border-gold-500/20 text-xs text-gold-200 text-left">
+        <!-- Balanced 4-Card Grid (Groom Parents, Bride Parents, Groom Elders, Bride Elders) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gold-500/20 text-xs text-gold-200 text-left">
           
-          <!-- Groom Family -->
+          <!-- Groom's Parents -->
           <div class="bg-royal-900/60 p-4 rounded-lg border border-gold-500/20 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-serif block mb-1">
+                <span class="lang-te telugu-font">వరుని తల్లిదండ్రులు</span>
+                <span class="lang-en hidden">Groom's Parents</span>
+              </span>
               <p class="font-bold text-gold-300 text-sm">
                 <span class="lang-te telugu-font">శ్రీ తాతపూడి కళ్యాణ్ చక్రవర్తి &amp; శ్రీమతి సత్యవతి</span>
                 <span class="lang-en hidden">Sri Tatapudi Kalyan Chakravarthy &amp; Smt. Satyavathi</span>
               </p>
               <p class="text-gold-300/70 mt-1">
-                <span class="lang-te telugu-font">డి.నెం. 6-91/1/185, ఎఫ్-301, వాహిన్ కాజిల్-2, కృష్ణరాయపురం, వేపగుంట, విశాఖపట్నం - 47</span>
-                <span class="lang-en hidden">D.No. 6-91/1/185, F-301, Vahin Castle-2, Krishna Rayapuram, Vepagunta, Visakhapatnam - 47</span>
+                <span class="lang-te telugu-font">వాహిన్ కాజిల్-2, వేపగుంట, వైజాగ్ - 47</span>
+                <span class="lang-en hidden">Vahin Castle-2, Vepagunta, Vizag - 47</span>
               </p>
             </div>
             <p class="text-gold-400 mt-2 font-mono">📞 9652574319, 8978081927</p>
           </div>
 
-          <!-- Bride Family -->
+          <!-- Bride's Parents -->
           <div class="bg-royal-900/60 p-4 rounded-lg border border-gold-500/20 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-serif block mb-1">
+                <span class="lang-te telugu-font">వధువు తల్లిదండ్రులు</span>
+                <span class="lang-en hidden">Bride's Parents</span>
+              </span>
               <p class="font-bold text-gold-300 text-sm">
                 <span class="lang-te telugu-font">శ్రీ నృసింహదేవర సూర్యప్రకాష్ &amp; శ్రీమతి వనజ (దివంగతులు)</span>
                 <span class="lang-en hidden">Sri Nrusimhadevara Surya Prakash &amp; Late Smt. Vanaja</span>
               </p>
               <p class="text-gold-300/70 mt-1">
-                <span class="lang-te telugu-font">డి.నెం. 9-7-175, సాయిరామ్ నగర్, హైస్కూల్ రోడ్, గాజువాక, విశాఖపట్నం</span>
-                <span class="lang-en hidden">D.No. 9-7-175, Sairam Nagar, Highschool Road, Gajuwaka, Visakhapatnam</span>
+                <span class="lang-te telugu-font">సాయిరామ్ నగర్, గాజువాక, వైజాగ్</span>
+                <span class="lang-en hidden">Sairam Nagar, Gajuwaka, Vizag</span>
               </p>
             </div>
             <p class="text-gold-400 mt-2 font-mono">📞 9052988755, 8885577435</p>
           </div>
 
-          <!-- Elders & Compliments -->
-          
+          <!-- Groom's Side Elders -->
+          <div class="bg-royal-900/60 p-4 rounded-lg border border-gold-500/20 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-serif block mb-1">
+                <span class="lang-te telugu-font">వరుని వైపు పెద్దలు</span>
+                <span class="lang-en hidden">Groom Side Elders</span>
+              </span>
+              <p class="font-bold text-gold-300 text-sm">
+                <span class="lang-te telugu-font">శ్రీ తాతపూడి శ్రీనివాస్ ప్రసాద్ &amp; శ్రీమతి లక్ష్మీ నరసమ్మ</span>
+                <span class="lang-en hidden">Sri Tatapudi Srinivas Prasad &amp; Smt. Lakshmi Narasamma</span>
+              </p>
+              <p class="text-gold-300/70 mt-1">
+                <span class="lang-te telugu-font">మరియు బంధుమిత్రులు, శ్రేయోభిలాషులు</span>
+                <span class="lang-en hidden">And Relatives &amp; Well-Wishers</span>
+              </p>
+            </div>
+            <p class="text-gold-400/90 font-serif mt-2">
+              <span class="lang-te telugu-font">ఆశీస్సులతో: తాతపూడి కుటుంబం</span>
+              <span class="lang-en hidden">With Blessings: Tatapudi Family</span>
+            </p>
+          </div>
+
+          <!-- Bride's Side Elders -->
+          <div class="bg-royal-900/60 p-4 rounded-lg border border-gold-500/20 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-serif block mb-1">
+                <span class="lang-te telugu-font">వధువు వైపు పెద్దలు</span>
+                <span class="lang-en hidden">Bride Side Elders</span>
+              </span>
+              <p class="font-bold text-gold-300 text-sm">
+                <span class="lang-te telugu-font">శ్రీ నృసింహదేవర సత్యప్రసాద్ &amp; శ్రీమతి నాగలక్ష్మి</span>
+                <span class="lang-en hidden">Sri Nrusimhadevara Satya Prasad &amp; Smt. Naga Lakshmi</span>
+              </p>
+              <p class="text-gold-300/70 mt-1">
+                <span class="lang-te telugu-font">మరియు బంధుమిత్రులు, శ్రేయోభిలాషులు</span>
+                <span class="lang-en hidden">And Relatives &amp; Well-Wishers</span>
+              </p>
+            </div>
+            <p class="text-gold-400/90 font-serif mt-2">
+              <span class="lang-te telugu-font">ఆశీస్సులతో: నృసింహదేవర కుటుంబం</span>
+              <span class="lang-en hidden">With Blessings: Nrusimhadevara Family</span>
+            </p>
+          </div>
 
         </div>
       </div>
@@ -601,7 +650,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
-      <!-- Event 1: Pre-Wedding Dinner & Reception -->
+      <!-- Event 1: Dinner -->
       <div class="royal-card-frame p-6 sm:p-8 flex flex-col justify-between hover:scale-[1.01] transition-transform">
         <div>
           <div class="flex items-center justify-between text-gold-400 mb-3">
@@ -690,7 +739,6 @@
         </div>
 
         <div class="flex flex-wrap items-center gap-3">
-          <!-- Direct Attached Google Maps Short Link -->
           <a href="https://maps.app.goo.gl/picNUgGGsuXviuE1A" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-gold-500 text-royal-950 font-serif font-bold text-xs uppercase tracking-wider flex items-center space-x-2 hover:bg-gold-400 transition shadow">
             <i data-lucide="navigation" class="w-4 h-4"></i>
             <span class="lang-te telugu-font">గూగుల్ మ్యాప్స్</span>
@@ -708,7 +756,7 @@
     </div>
   </section>
 
-  <!-- Interactive Saptapadi (7 Sacred Steps) Experience -->
+  <!-- Interactive Saptapadi Experience -->
   <section id="saptapadi" class="max-w-5xl mx-auto px-4 py-12">
     <div class="text-center mb-10">
       <div class="inline-flex items-center space-x-2 text-gold-400 text-xs font-serif tracking-[0.25em] uppercase mb-1">
@@ -720,7 +768,7 @@
         <span>👣</span>
       </div>
       <h2 class="font-royal text-2xl sm:text-3xl md:text-4xl text-gold-200">
-        <span class="lang-te telugu-font">సప్తపది<span>
+        <span class="lang-te telugu-font">సప్తపది</span>
         <span class="lang-en hidden">Saptapadi (7 Sacred Vows)</span>
       </h2>
       <p class="text-xs sm:text-sm text-gold-300/80 max-w-xl mx-auto mt-2 font-serif">
@@ -780,7 +828,7 @@
     </div>
   </section>
 
-  <!-- Interactive Secret Keys / Telugu Wedding Trivia Game -->
+  <!-- Interactive Secret Keys Trivia Game -->
   <section class="max-w-4xl mx-auto px-4 py-12">
     <div class="text-center mb-10">
       <div class="inline-flex items-center space-x-2 text-gold-400 text-xs font-serif tracking-[0.25em] uppercase mb-1">
@@ -1035,14 +1083,14 @@
       const teEls = document.querySelectorAll('.lang-te');
 
       if (lang === 'te') {
-        teBtn.className = "px-2.5 py-1 text-xs rounded-full font-serif transition-colors bg-gold-500 text-royal-950 font-bold";
-        enBtn.className = "px-2.5 py-1 text-xs rounded-full font-serif transition-colors text-gold-300 hover:text-white";
+        teBtn.className = "px-3.5 py-1 text-xs rounded-full font-serif transition-colors bg-gold-500 text-royal-950 font-bold";
+        enBtn.className = "px-3.5 py-1 text-xs rounded-full font-serif transition-colors text-gold-300 hover:text-white";
         enEls.forEach(el => el.classList.add('hidden'));
         teEls.forEach(el => el.classList.remove('hidden'));
         showToast("భాష మార్చబడింది: తెలుగు");
       } else {
-        enBtn.className = "px-2.5 py-1 text-xs rounded-full font-serif transition-colors bg-gold-500 text-royal-950 font-bold";
-        teBtn.className = "px-2.5 py-1 text-xs rounded-full font-serif transition-colors text-gold-300 hover:text-white";
+        enBtn.className = "px-3.5 py-1 text-xs rounded-full font-serif transition-colors bg-gold-500 text-royal-950 font-bold";
+        teBtn.className = "px-3.5 py-1 text-xs rounded-full font-serif transition-colors text-gold-300 hover:text-white";
         teEls.forEach(el => el.classList.add('hidden'));
         enEls.forEach(el => el.classList.remove('hidden'));
         showToast("Language set to English");
@@ -1318,12 +1366,30 @@
       showToast(currentLang === 'te' ? "క్యాలెండర్ ఈవెంట్ డౌన్‌లోడ్ అయింది!" : "Calendar invite downloaded!");
     }
 
-    // 8. Custom Audio File Player
-    function toggleCustomMusic() {
-      const audio = document.getElementById('wedding-audio');
-      const toggleBtn = document.getElementById('music-toggle');
-      const icon = document.getElementById('music-icon');
+    // 8. Custom Audio File Player with Default Autoplay
+    const audio = document.getElementById('wedding-audio');
+    const toggleBtn = document.getElementById('music-toggle');
 
+    function startMusic() {
+      if (!audio) return;
+      audio.play().then(() => {
+        if (toggleBtn) toggleBtn.classList.add('bg-gold-500/30', 'border-gold-300');
+        ['click', 'touchstart', 'scroll'].forEach(evt => 
+          document.removeEventListener(evt, startMusic)
+        );
+      }).catch(() => {
+        // Autoplay blocked by mobile browser policy; will start on first guest touch/scroll
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      startMusic();
+      ['click', 'touchstart', 'scroll'].forEach(evt => 
+        document.addEventListener(evt, startMusic, { once: true })
+      );
+    });
+
+    function toggleCustomMusic() {
       if (!audio) return;
 
       if (audio.paused) {
