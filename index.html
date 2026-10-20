@@ -97,6 +97,10 @@
       box-shadow: 0 0 25px rgba(212, 175, 55, 0.22);
     }
 
+    .gold-glow-lg {
+      box-shadow: 0 0 45px rgba(212, 175, 55, 0.35);
+    }
+
     @keyframes floatSlow {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-8px) rotate(1deg); }
@@ -135,6 +139,25 @@
       border-radius: 1rem;
       pointer-events: none;
     }
+
+    /* 9:16 Royal Photo Frame */
+    .photo-container-9-16 {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      border: 2px solid rgba(223, 186, 90, 0.6);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(223, 186, 90, 0.25);
+    }
+
+    .photo-container-9-16::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px dashed rgba(255, 215, 0, 0.4);
+      border-radius: 1rem;
+      pointer-events: none;
+    }
   </style>
 </head>
 
@@ -156,8 +179,13 @@
         <span class="font-royal text-sm md:text-base tracking-wider text-gold-300 font-bold uppercase">ABHISHEK &hearts; LIKHITHA</span>
       </div>
 
-      <!-- Quick RSVP Button on Nav -->
-      <div>
+      <!-- Quick Action on Nav -->
+      <div class="flex items-center space-x-3">
+        <button onclick="triggerBlessingConfetti(event)" class="px-4 py-1.5 rounded-full border border-gold-400/50 bg-royal-900/80 text-gold-300 hover:bg-gold-500/20 text-xs font-serif flex items-center space-x-1.5 transition">
+          <span>🌾</span>
+          <span class="lang-te">అక్షింతలు</span>
+          <span class="lang-en hidden">Akshathalu</span>
+        </button>
         <a href="#wishes" class="px-5 py-2 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-royal-950 font-serif font-bold text-xs tracking-wider uppercase hover:shadow-lg hover:shadow-gold-500/20 transition-transform active:scale-95 inline-block">
           <span class="lang-te">ఆశీస్సులు</span>
           <span class="lang-en hidden">Blessings</span>
@@ -202,7 +230,7 @@
       </div>
 
       <!-- Sacred Om (ॐ) Golden Symbol Motif -->
-      <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6 flex items-center justify-center animate-float">
+      <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6 flex items-center justify-center animate-float cursor-pointer" onclick="triggerBlessingConfetti(event)" title="Click for divine shower!">
         <div class="absolute inset-0 rounded-full border border-gold-500/30 bg-radial from-gold-500/20 to-transparent blur-sm"></div>
         <div class="relative w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-gold-400/60 flex items-center justify-center bg-royal-950/80 shadow-[0_0_20px_rgba(223,186,90,0.35)]">
           <span class="text-4xl md:text-5xl font-serif text-gold-300 drop-shadow-[0_2px_8px_rgba(223,186,90,0.6)]">ॐ</span>
@@ -337,8 +365,36 @@
     </div>
   </section>
 
-  <!-- Couple & Family Genealogy Section -->
-  <section class="max-w-5xl mx-auto px-4 py-12">
+  <!-- Interactive Jeelakarra-Bellam Ritual Corner -->
+  <section class="max-w-4xl mx-auto px-4 mb-16 relative z-20">
+    <div class="royal-card-frame p-6 text-center border-gold-400/40 bg-gradient-to-r from-royal-900/80 via-royal-950 to-royal-900/80">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-left sm:max-w-md">
+          <div class="flex items-center space-x-2 text-gold-400 mb-1">
+            <span class="text-xl">🌿</span>
+            <span class="font-royal text-xs uppercase tracking-widest font-bold">
+              <span class="lang-te">జీలకర్ర-బెల్లం సంప్రదాయం</span>
+              <span class="lang-en hidden">Interactive Sacred Ritual</span>
+            </span>
+          </div>
+          <p class="text-xs text-gold-200/90 font-serif leading-relaxed">
+            <span class="lang-te">వధూవరులపై జీలకర్ర-బెల్లం మరియు అక్షింతల దీవెనలు కురిపించడానికి ఇక్కడ నొక్కండి!</span>
+            <span class="lang-en hidden">Tap to perform the symbolic Jeelakarra-Bellam blessing & shower akshathalu!</span>
+          </p>
+        </div>
+
+        <button onclick="performRitualBlessing(event)" class="px-6 py-3 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-royal-950 font-serif font-bold text-xs uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition flex items-center space-x-2">
+          <span>🌿</span>
+          <span class="lang-te">ఆశీర్వదించండి</span>
+          <span class="lang-en hidden">Bestow Blessings</span>
+          <span>✨</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Couple Section with 9:16 Photo Portraits -->
+  <section class="max-w-5xl mx-auto px-4 py-8">
     <div class="text-center mb-12">
       <span class="text-gold-400 text-xs font-serif tracking-[0.25em] uppercase block mb-1">
         <span class="lang-te telugu-font">దివ్య బంధం</span>
@@ -353,22 +409,31 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
       
-      <!-- Groom Card -->
+      <!-- Groom Card with 9:16 Photo Frame -->
       <div class="royal-card-frame p-6 sm:p-8 flex flex-col justify-between hover:border-gold-400/60 transition group">
         <div>
           <div class="flex items-center justify-between mb-4 text-gold-500/40">
-            <span class="text-2xl">🕉️</span>
+            <span class="text-2xl">🕺</span>
             <span class="text-xs uppercase tracking-widest text-gold-400 font-serif font-bold">
               <span class="lang-te telugu-font">చిరంజీవి వరుడు</span>
               <span class="lang-en hidden">Chy. Groom</span>
             </span>
           </div>
 
-          <h3 class="font-royal font-bold text-3xl sm:text-4xl text-gold-300 mb-2 uppercase">
+          <!-- 9:16 Groom Portrait Frame (Replace 'groom.jpg' with your photo file) -->
+          <div class="photo-container-9-16 max-w-[240px] mx-auto mb-6 bg-royal-900 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+            <img src="groom.jpg" alt="ABHISHEK SARMA" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=720&q=80';" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-royal-950 via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-3 left-0 right-0 text-center">
+              <span class="text-[11px] font-royal tracking-widest uppercase text-gold-300 font-bold px-3 py-1 rounded-full bg-royal-950/80 border border-gold-500/30">ABHISHEK</span>
+            </div>
+          </div>
+
+          <h3 class="font-royal font-bold text-3xl sm:text-4xl text-gold-300 mb-2 uppercase text-center">
             <span class="lang-te telugu-font">అభిషేక్ శర్మ</span>
             <span class="lang-en hidden">ABHISHEK SARMA</span>
           </h3>
-          <p class="text-xs uppercase tracking-wider text-gold-400/90 font-serif mb-4">
+          <p class="text-xs uppercase tracking-wider text-gold-400/90 font-serif mb-4 text-center">
             <span class="lang-te telugu-font">జ్యేష్ఠ పుత్రుడు</span>
             <span class="lang-en hidden">Elder Son</span>
           </p>
@@ -415,22 +480,31 @@
         </div>
       </div>
 
-      <!-- Bride Card -->
+      <!-- Bride Card with 9:16 Photo Frame -->
       <div class="royal-card-frame p-6 sm:p-8 flex flex-col justify-between hover:border-gold-400/60 transition group">
         <div>
           <div class="flex items-center justify-between mb-4 text-gold-500/40">
-            <span class="text-2xl">🪷</span>
+            <span class="text-2xl">💃</span>
             <span class="text-xs uppercase tracking-widest text-gold-400 font-serif font-bold">
               <span class="lang-te telugu-font">చి॥ల॥సౌ॥ వధువు</span>
               <span class="lang-en hidden">Chy. La. Sow. Bride</span>
             </span>
           </div>
 
-          <h3 class="font-royal font-bold text-3xl sm:text-4xl text-gold-300 mb-2 uppercase">
+          <!-- 9:16 Bride Portrait Frame (Replace 'bride.jpg' with your photo file) -->
+          <div class="photo-container-9-16 max-w-[240px] mx-auto mb-6 bg-royal-900 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+            <img src="bride.jpg" alt="SATYA SAI LIKHITHA" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=720&q=80';" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-royal-950 via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-3 left-0 right-0 text-center">
+              <span class="text-[11px] font-royal tracking-widest uppercase text-gold-300 font-bold px-3 py-1 rounded-full bg-royal-950/80 border border-gold-500/30">LIKHITHA</span>
+            </div>
+          </div>
+
+          <h3 class="font-royal font-bold text-3xl sm:text-4xl text-gold-300 mb-2 uppercase text-center">
             <span class="lang-te telugu-font">సత్యసాయి లిఖిత</span>
             <span class="lang-en hidden">SATYA SAI LIKHITHA</span>
           </h3>
-          <p class="text-xs uppercase tracking-wider text-gold-400/90 font-serif mb-4">
+          <p class="text-xs uppercase tracking-wider text-gold-400/90 font-serif mb-4 text-center">
             <span class="lang-te telugu-font">ఏకైక పుత్రిక</span>
             <span class="lang-en hidden">Only Daughter</span>
           </p>
@@ -633,7 +707,7 @@
               <h4 class="text-gold-300 font-bold border-b border-gold-500/20 pb-1 mb-2">కల్యాణ వేదిక &amp; విందు:</h4>
               <p class="text-sm">
                 తేది: <strong>18-11-2026 బుధవారం రాత్రి 7:00 గం॥ల నుండి</strong> కల్యాణవేదిక వద్ద ప్రీతి భోజనము<br>
-                <strong>"రమేష్ కన్వెన్షన్స్"</strong>, జగదాంబ థియేటర్ ఎదురుగా, దండుబజార్, మహారాణిపేట, విశాఖపట్నం
+                <strong>"రమేష్ కన్వెన్షన్స్"</strong>, జగదాంబ థియేటర్ ఎదురుగా, దండుబజార్, మహారాణిపేట, విశాఖపట్నం.
               </p>
             </div>
           </div>
@@ -679,7 +753,7 @@
               <h4 class="text-gold-300 font-bold border-b border-gold-500/20 pb-1 mb-2 font-royal">Venue &amp; Reception Dinner:</h4>
               <p class="text-sm">
                 Dinner follows from <strong>7:00 PM onwards</strong><br>
-                <strong>Ramesh Conventions</strong>, Opp. Jagadamba Theatre, Dandu Bazar, Maharanipeta, Visakhapatnam
+                <strong>Ramesh Conventions</strong>, Opp. Jagadamba Theatre, Dandu Bazar, Maharanipeta, Visakhapatnam.
               </p>
             </div>
           </div>
@@ -757,7 +831,7 @@
           </p>
           <p class="text-xs sm:text-sm text-gold-100/80 leading-relaxed">
             <span class="lang-te telugu-font">జీలకర్ర-బెల్లం, మాంగల్యధారణ, సప్తపది శాస్త్రోక్తంగా జరుగును (శతభిషా నక్షత్రయుక్త కర్కాటక లగ్నమందు).</span>
-            <span class="lang-en hidden">The holy union, Jeelakarra-Bellam dharana, Mangalasutra dharana, and Saptapadi vows in <em>Satabhisha Nakshatrayukta Karkataka Lagnam</em></span>
+            <span class="lang-en hidden">The holy union, Jeelakarra-Bellam dharana, Mangalasutra dharana, and Saptapadi vows in <em>Satabhisha Nakshatrayukta Karkataka Lagnam</em>.</span>
           </p>
         </div>
         <div class="mt-6 pt-4 border-t border-gold-500/20 text-xs text-gold-300/80 flex items-center space-x-2">
@@ -841,7 +915,7 @@
         <button onclick="goToStep(2)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400" data-step="2">3</button>
         <button onclick="goToStep(3)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400" data-step="3">4</button>
         <button onclick="goToStep(4)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400" data-step="4">5</button>
-        <button onclick="goToStep(5)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400" data-step="6">6</button>
+        <button onclick="goToStep(5)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400" data-step="5">6</button>
         <button onclick="goToStep(6)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400" data-step="6">7</button>
       </div>
 
@@ -864,7 +938,7 @@
           </span>
         </button>
         
-        <button onclick="triggerBlessingConfetti()" class="px-4 py-2 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-200 text-xs font-serif tracking-wider hover:bg-gold-500/30 transition flex items-center space-x-1.5">
+        <button onclick="triggerBlessingConfetti(event)" class="px-4 py-2 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-200 text-xs font-serif tracking-wider hover:bg-gold-500/30 transition flex items-center space-x-1.5">
           <span>🌸</span>
           <span>
             <span class="lang-te telugu-font">అక్షింతలు వేయండి</span>
@@ -1112,7 +1186,7 @@
       </p>
       
       <div class="pt-6 border-t border-gold-500/10 text-xs text-gold-400/60 font-serif space-y-1">
-        <p>18 November 2026 &bull; Ramesh Conventions, Visakhapatnam[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span)</p>
+        <p>18 November 2026 &bull; Ramesh Conventions, Visakhapatnam</p>
         <p>Tatapudi Family &bull; Wedding Invitation</p>
       </div>
     </div>
@@ -1127,7 +1201,7 @@
   <script>
     lucide.createIcons();
 
-    // 1. Language Toggle with strict class-based display
+    // 1. Clean Language Switcher Logic
     let currentLang = 'te';
 
     function setLanguage(lang) {
@@ -1141,7 +1215,6 @@
         teBtn.className = "px-3.5 py-1.5 text-xs rounded-full font-serif transition-colors bg-gold-500 text-royal-950 font-bold";
         enBtn.className = "px-3.5 py-1.5 text-xs rounded-full font-serif transition-colors text-gold-300 hover:text-white";
         
-        // Hide English, Show Telugu
         enEls.forEach(el => el.classList.add('hidden'));
         teEls.forEach(el => el.classList.remove('hidden'));
         
@@ -1150,7 +1223,6 @@
         enBtn.className = "px-3.5 py-1.5 text-xs rounded-full font-serif transition-colors bg-gold-500 text-royal-950 font-bold";
         teBtn.className = "px-3.5 py-1.5 text-xs rounded-full font-serif transition-colors text-gold-300 hover:text-white";
         
-        // Hide Telugu, Show English
         teEls.forEach(el => el.classList.add('hidden'));
         enEls.forEach(el => el.classList.remove('hidden'));
         
@@ -1159,7 +1231,6 @@
       renderStep();
     }
 
-    // Set Default View to Telugu on Load
     document.addEventListener("DOMContentLoaded", () => {
       setLanguage('te');
     });
@@ -1307,7 +1378,9 @@
       renderStep();
     }
 
-    function triggerBlessingConfetti() {
+    // 4. Interactive Confetti & Akshathalu
+    function triggerBlessingConfetti(e) {
+      if (e) e.stopPropagation();
       confetti({
         particleCount: 50,
         spread: 60,
@@ -1317,7 +1390,35 @@
       showToast(currentLang === 'te' ? "🌸 అక్షింతల ఆశీస్సులు అందించబడ్డాయి!" : "🌸 Divine Akshathalu Showered!");
     }
 
-    // 4. Secret Keys Telugu Wedding Trivia Logic
+    // Interactive Click-Anywhere Petal Shower
+    window.addEventListener('click', (e) => {
+      // Don't fire if clicking interactive buttons or inputs
+      if (e.target.closest('button') || e.target.closest('input') || e.target.closest('textarea') || e.target.closest('a')) return;
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      confetti({
+        particleCount: 15,
+        startVelocity: 15,
+        spread: 40,
+        ticks: 60,
+        origin: { x, y },
+        colors: ['#f5e8be', '#dfba5a', '#f59e0b', '#f43f5e']
+      });
+    });
+
+    // Interactive Jeelakarra-Bellam Ritual
+    function performRitualBlessing(e) {
+      if (e) e.stopPropagation();
+      confetti({
+        particleCount: 100,
+        spread: 90,
+        origin: { y: 0.5 },
+        colors: ['#ffd700', '#dfba5a', '#78350f', '#10b981', '#ffffff']
+      });
+      showToast(currentLang === 'te' ? "🌿 జీలకర్ర-బెల్లం దివ్య బంధం! వధూవరులకు శుభాశీస్సులు!" : "🌿 Auspicious Jeelakarra-Bellam blessings showered on the couple!");
+    }
+
+    // 5. Secret Keys Telugu Wedding Trivia Logic
     const secretKeys = {
       1: ["pasupu", "haldi", "turmeric"],
       2: ["jeelakarra bellam", "jeelakarra", "bellam", "jeelakarrabellam"],
@@ -1355,7 +1456,7 @@
       }
     }
 
-    // 5. Wishes Wall Posting
+    // 6. Wishes Wall Posting
     function submitWish(e) {
       e.preventDefault();
       const name = document.getElementById('guest-name').value;
@@ -1384,7 +1485,7 @@
       return text.replace(/[&<>"']/g, m => map[m]);
     }
 
-    // 6. Copy Venue Address
+    // 7. Copy Venue Address
     function copyVenueAddress() {
       const address = "Ramesh Conventions, Opp. Jagadamba Theatre, Dandu Bazar, Maharanipeta, Visakhapatnam - 530002, Andhra Pradesh";
       const dummy = document.createElement("textarea");
@@ -1402,7 +1503,7 @@
       }, 2500);
     }
 
-    // 7. Add to Calendar (.ics format download)
+    // 8. Add to Calendar (.ics format download)
     function addToCalendar() {
       const icsData = [
         "BEGIN:VCALENDAR",
@@ -1427,7 +1528,7 @@
       showToast(currentLang === 'te' ? "క్యాలెండర్ ఈవెంట్ డౌన్‌లోడ్ అయింది!" : "Calendar invite downloaded!");
     }
 
-    // 8. Custom Audio File Player with Default Autoplay
+    // 9. Custom Audio File Player with Default Autoplay
     const audio = document.getElementById('wedding-audio');
     const toggleBtn = document.getElementById('music-toggle');
 
@@ -1467,7 +1568,7 @@
       }
     }
 
-    // 9. Toast Notification Helper
+    // 10. Toast Notification Helper
     function showToast(text) {
       const toast = document.getElementById('toast');
       toast.innerText = text;
@@ -1479,7 +1580,7 @@
       }, 3000);
     }
 
-    // 10. Canvas Falling Golden Petals
+    // 11. Canvas Falling Golden Petals
     const canvas = document.getElementById('petals-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -1550,4 +1651,4 @@
     animatePetals();
   </script>
 </body>
-  </html>
+</html>
