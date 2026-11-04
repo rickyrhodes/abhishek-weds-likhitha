@@ -158,26 +158,6 @@
       border-radius: 1rem;
       pointer-events: none;
     }
-
-    .video-frame-16x9 {
-      position: relative;
-      width: min(100%, 1100px);
-      aspect-ratio: 16 / 9;
-      margin: 0 auto;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      border: 1px solid rgba(223, 186, 90, 0.65);
-      box-shadow: 0 0 30px rgba(223, 186, 90, 0.14);
-      background: #020917;
-    }
-
-    .video-frame-16x9 video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      background: #020917;
-    }
   </style>
 </head>
 
@@ -199,6 +179,7 @@
         <span class="font-royal text-sm md:text-base tracking-wider text-gold-300 font-bold uppercase">ABHISHEK &hearts; LIKHITHA</span>
       </div>
 
+      <!-- Quick Action on Nav -->
       <div class="flex items-center space-x-3">
         <button onclick="triggerBlessingConfetti(event)" class="px-4 py-1.5 rounded-full border border-gold-400/50 bg-royal-900/80 text-gold-300 hover:bg-gold-500/20 text-xs font-serif flex items-center space-x-2">
           <span>🌾</span>
@@ -213,8 +194,9 @@
     </div>
   </nav>
 
-  <!-- Top Centered Language & Music Controls -->
-  <aside class="fixed top-3 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-3 pointer-events-auto">
+  <!-- Pinned Floating Controls (Bottom-Right Viewport) -->
+  <aside class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-auto">
+    <!-- Language Switcher Capsule -->
     <div class="inline-flex rounded-full p-1 border border-gold-500/40 bg-royal-950/90 shadow-2xl backdrop-blur-md">
       <button id="lang-te" onclick="setLanguage('te')" class="px-3.5 py-1.5 text-xs rounded-full font-serif transition-colors bg-gold-500 text-royal-950 font-bold">
         తెలుగు
@@ -224,9 +206,10 @@
       </button>
     </div>
 
+    <!-- Music Floating Capsule -->
     <button id="music-toggle" onclick="toggleCustomMusic()" title="Play Auspicious Music" class="flex items-center space-x-2 px-4 py-2.5 rounded-full border border-gold-500/50 bg-royal-950/95 hover:bg-gold-500/10 text-gold-200 text-xs font-serif tracking-wider font-bold shadow-2xl backdrop-blur-md">
       <i data-lucide="volume-2" id="music-icon" class="w-4 h-4 text-gold-400"></i>
-      <span id="music-text">
+      <span id="music-text" class="font-bold">
         <span class="lang-te">నాదస్వరం</span>
         <span class="lang-en hidden">Music</span>
       </span>
@@ -236,13 +219,17 @@
   <!-- Main Hero Section -->
   <header class="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 bg-damask overflow-hidden text-center">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-gold-500/10 via-maroon-700/15 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
     <div class="max-w-4xl mx-auto relative z-10">
+      
+      <!-- Invocations -->
       <div class="inline-block mb-5 px-6 py-1.5 rounded-full border border-gold-500/30 bg-royal-900/60 backdrop-blur-sm">
         <p class="text-xs md:text-sm tracking-[0.25em] text-gold-300 font-serif uppercase">
           || శ్రీరస్తు &bull; శుభమస్తు &bull; అవిఘ్నమస్తు ||
         </p>
       </div>
 
+      <!-- Sacred Om (ॐ) Golden Symbol Motif -->
       <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6 flex items-center justify-center animate-float cursor-pointer" onclick="triggerBlessingConfetti(event)" title="Click for divine shower of blessings">
         <div class="absolute inset-0 rounded-full border border-gold-500/30 bg-radial from-gold-500/20 to-transparent blur-sm"></div>
         <div class="relative w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-gold-400/60 flex items-center justify-center bg-royal-950/80 shadow-[0_0_20px_rgba(223,186,90,0.35)]">
@@ -250,11 +237,13 @@
         </div>
       </div>
 
+      <!-- Wedding Header Tagline -->
       <h3 class="font-royal text-sm md:text-lg tracking-widest text-gold-400 mb-2 uppercase">
         <span class="lang-te telugu-font">తాతపూడి వారి వివాహ మహోత్సవ ఆహ్వాన శుభపత్రిక</span>
         <span class="lang-en hidden">Tatapudi's Wedding Invitation</span>
       </h3>
 
+      <!-- Bride & Groom All-Caps Names -->
       <div class="my-6 md:my-8 space-y-2">
         <h1 class="font-royal font-bold tracking-wider text-4xl sm:text-6xl md:text-7xl gold-gradient-text leading-tight drop-shadow-md uppercase">
           <span class="lang-te telugu-font">అభిషేక్ శర్మ</span>
@@ -274,6 +263,7 @@
         </h1>
       </div>
 
+      <!-- Sacred Shloka -->
       <div class="max-w-2xl mx-auto my-6 px-4">
         <p class="italic text-gold-300/90 text-sm md:text-base leading-relaxed border-y border-gold-500/20 py-3">
           <span class="lang-te telugu-font">"మాంగల్యం తంతునానేనా మమ జీవన హేతునా | కంఠే బధ్నామి సుభగే త్వం జీవ శరదా శతం"</span>
@@ -281,6 +271,7 @@
         </p>
       </div>
 
+      <!-- Auspicious Date Callout -->
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-gold-200 text-sm md:text-base font-serif">
         <div class="flex items-center space-x-2">
           <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i>
@@ -307,6 +298,7 @@
         </div>
       </div>
 
+      <!-- Quick Action Buttons -->
       <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
         <a href="#events" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-royal-950 font-serif font-bold text-sm tracking-wider uppercase shadow-md hover:shadow-lg hover:scale-[1.02] transition-all">
           <span class="lang-te telugu-font">వివాహ వివరాలు</span>
@@ -323,41 +315,870 @@
           <span class="lang-en hidden">7 Sacred Vows</span>
         </a>
       </div>
+
     </div>
   </header>
 
-  <section class="max-w-5xl mx-auto px-4 py-8 md:py-10 relative z-20">
-    <div class="video-frame-16x9">
-      <video id="wedding-video" controls playsinline preload="metadata">
-        <source src="your-custom-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <!-- Live Countdown Timer Section -->
+  <section class="max-w-4xl mx-auto px-4 -mt-4 mb-16 relative z-20">
+    <div class="royal-card-frame p-6 md:p-8 text-center gold-glow">
+      <h3 class="font-royal text-xs md:text-sm tracking-[0.2em] text-gold-400 mb-6 uppercase">
+        <span class="lang-te telugu-font">కల్యాణ శుభ ముహూర్త ఘడియలు</span>
+        <span class="lang-en hidden">Countdown to the Auspicious Muhurtham</span>
+      </h3>
+      
+      <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-lg mx-auto">
+        <div class="bg-royal-950/80 border border-gold-500/25 rounded-xl p-3 sm:p-4">
+          <span id="cd-days" class="block font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-gold-300">00</span>
+          <span class="text-[10px] sm:text-xs text-gold-400/80 uppercase tracking-widest">
+            <span class="lang-te telugu-font">రోజులు</span>
+            <span class="lang-en hidden">Days</span>
+          </span>
+        </div>
+        <div class="bg-royal-950/80 border border-gold-500/25 rounded-xl p-3 sm:p-4">
+          <span id="cd-hours" class="block font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-gold-300">00</span>
+          <span class="text-[10px] sm:text-xs text-gold-400/80 uppercase tracking-widest">
+            <span class="lang-te telugu-font">గంటలు</span>
+            <span class="lang-en hidden">Hours</span>
+          </span>
+        </div>
+        <div class="bg-royal-950/80 border border-gold-500/25 rounded-xl p-3 sm:p-4">
+          <span id="cd-mins" class="block font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-gold-300">00</span>
+          <span class="text-[10px] sm:text-xs text-gold-400/80 uppercase tracking-widest">
+            <span class="lang-te telugu-font">నిమిషాలు</span>
+            <span class="lang-en hidden">Mins</span>
+          </span>
+        </div>
+        <div class="bg-royal-950/80 border border-gold-500/25 rounded-xl p-3 sm:p-4">
+          <span id="cd-secs" class="block font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-gold-300">00</span>
+          <span class="text-[10px] sm:text-xs text-gold-400/80 uppercase tracking-widest">
+            <span class="lang-te telugu-font">సెకన్లు</span>
+            <span class="lang-en hidden">Secs</span>
+          </span>
+        </div>
+      </div>
+
+      <p class="mt-4 text-xs text-gold-300/70 italic">
+        <span class="lang-te telugu-font">కార్తీక శుద్ధ నవమి &bull; శతభిషా నక్షత్రయుక్త కర్కాటక లగ్నమందు</span>
+        <span class="lang-en hidden">Karthika Suddha Navami &bull; Satabhisha Nakshatrayukta Karkataka Lagnam (Wednesday Night 9:56 hrs)</span>
+      </p>
     </div>
   </section>
 
-  <!-- rest of page continues unchanged -->
+  <!-- Interactive Jeelakarra-Bellam Ritual Corner -->
+  <section class="max-w-4xl mx-auto px-4 mb-16 relative z-20">
+    <div class="royal-card-frame p-6 text-center border-gold-400/40 bg-gradient-to-r from-royal-900/80 via-royal-950 to-royal-900/80">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-left sm:max-w-md">
+          <div class="flex items-center space-x-2 text-gold-400 mb-1">
+            <span class="text-xl">🌿</span>
+            <span class="font-royal text-xs uppercase tracking-widest font-bold">
+              <span class="lang-te">జీలకర్ర-బెల్లం సంప్రదాయం</span>
+              <span class="lang-en hidden">Interactive Sacred Ritual</span>
+            </span>
+          </div>
+          <p class="text-xs text-gold-200/90 font-serif leading-relaxed">
+            <span class="lang-te">వధూవరులపై జీలకర్ర-బెల్లం మరియు అక్షింతల దీవెనలు కురిపించడానికై నొక్కండి.</span>
+            <span class="lang-en hidden">Tap to perform the symbolic Jeelakarra-Bellam blessing & shower akshathalu!</span>
+          </p>
+        </div>
+
+        <button onclick="performRitualBlessing(event)" class="px-6 py-3 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-royal-950 font-serif font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center space-x-2">
+          <span>🌿</span>
+          <span class="lang-te">ఆశీర్వదించండి</span>
+          <span class="lang-en hidden">Bestow Blessings</span>
+          <span>✨</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Couple Section with 9:16 Photo Portraits -->
+  <section class="max-w-5xl mx-auto px-4 py-8">
+    <div class="text-center mb-12">
+      <span class="text-gold-400 text-xs font-serif tracking-[0.25em] uppercase block mb-1">
+        <span class="lang-te telugu-font">దివ్య బంధం</span>
+        <span class="lang-en hidden">Divine Union</span>
+      </span>
+      <h2 class="font-royal text-2xl sm:text-3xl md:text-4xl text-gold-200">
+        <span class="lang-te telugu-font">వధూవరుల పరిచయం</span>
+        <span class="lang-en hidden">The Bride &amp; The Groom</span>
+      </h2>
+      <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      
+      <!-- Groom Card with 9:16 Photo Frame -->
+      <div class="royal-card-frame p-6 sm:p-8 flex flex-col justify-between hover:border-gold-400/60 transition group">
+        <div>
+          <div class="flex items-center justify-between mb-4 text-gold-500/40">
+            <span class="text-2xl">🕺</span>
+            <span class="text-xs uppercase tracking-widest text-gold-400 font-serif font-bold">
+              <span class="lang-te telugu-font">చిరంజీవి వరుడు</span>
+              <span class="lang-en hidden">Chy. Groom</span>
+            </span>
+          </div>
+
+          <div class="photo-container-9-16 max-w-[240px] mx-auto mb-6 bg-royal-900 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+            <img src="groom.JPG" alt="ABHISHEK SARMA" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-royal-950 via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-3 left-0 right-0 text-center">
+              <span class="text-[11px] font-royal tracking-widest uppercase text-gold-300 font-bold px-3 py-1 rounded-full bg-royal-950/80 border border-gold-500/30">ABHISHEK</span>
+            </div>
+          </div>
+
+          <h3 class="font-royal font-bold text-3xl sm:text-4xl text-gold-300 mb-2 uppercase text-center">
+            <span class="lang-te telugu-font">అభిషేక్ శర్మ</span>
+            <span class="lang-en hidden">ABHISHEK SARMA</span>
+          </h3>
+          <p class="text-xs uppercase tracking-wider text-gold-400/90 font-serif mb-4 text-center">
+            <span class="lang-te telugu-font">జ్యేష్ఠ పుత్రుడు</span>
+            <span class="lang-en hidden">Elder Son</span>
+          </p>
+
+          <div class="space-y-3 text-sm text-gold-100/90 border-t border-gold-500/20 pt-4">
+            <div>
+              <span class="text-xs text-gold-400 block font-serif uppercase tracking-wider">
+                <span class="lang-te telugu-font">తల్లిదండ్రులు:</span>
+                <span class="lang-en hidden">Parents:</span>
+              </span>
+              <p class="font-serif">
+                <span class="lang-te telugu-font">శ్రీ తాతపూడి కళ్యాణ్ చక్రవర్తి</span>
+                <span class="lang-en hidden">Sri Tatapudi Kalyan Chakravarthy</span>
+              </p>
+              <p class="font-serif">
+                <span class="lang-te telugu-font">శ్రీమతి సత్యవతి</span>
+                <span class="lang-en hidden">Smt. Satyavathi</span>
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <span class="text-xs text-gold-400 block font-serif uppercase tracking-wider">
+                <span class="lang-te telugu-font">నివాస స్థలము:</span>
+                <span class="lang-en hidden">Residence:</span>
+              </span>
+              <p class="text-xs text-gold-300/80 mt-1">
+                <span class="lang-te telugu-font">డి.నెం. 6-91/1/185, ఎఫ్-301, 3వ అంతస్తు, వాహిన్ కాజిల్-2, కృష్ణరాయపురం, వేపగుంట, విశాఖపట్నం - 47</span>
+                <span class="lang-en hidden">D.No. 6-91/1/185, F-301, 3rd Floor, Vahin Castle-2, Krishna Rayapuram, Vepagunta, Visakhapatnam - 47</span>
+              </p>
+              <p class="text-xs text-gold-400 mt-2 font-mono">📞 9652574319, 8978081927</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-gold-500/20 flex items-center justify-between text-xs text-gold-400/80">
+          <span>
+            <span class="lang-te telugu-font">తాతపూడి వంశం</span>
+            <span class="lang-en hidden">Tatapudi Family</span>
+          </span>
+          <span>
+            <span class="lang-te telugu-font">విశాఖపట్నం</span>
+            <span class="lang-en hidden">Visakhapatnam</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Bride Card with 9:16 Photo Frame -->
+      <div class="royal-card-frame p-6 sm:p-8 flex flex-col justify-between hover:border-gold-400/60 transition group">
+        <div>
+          <div class="flex items-center justify-between mb-4 text-gold-500/40">
+            <span class="text-2xl">💃</span>
+            <span class="text-xs uppercase tracking-widest text-gold-400 font-serif font-bold">
+              <span class="lang-te telugu-font">చి॥ల॥సౌ॥ వధువు</span>
+              <span class="lang-en hidden">Chy. La. Sow. Bride</span>
+            </span>
+          </div>
+
+          <div class="photo-container-9-16 max-w-[240px] mx-auto mb-6 bg-royal-900 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+            <img src="bride.JPG" alt="SATYA SAI LIKHITHA" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-royal-950 via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-3 left-0 right-0 text-center">
+              <span class="text-[11px] font-royal tracking-widest uppercase text-gold-300 font-bold px-3 py-1 rounded-full bg-royal-950/80 border border-gold-500/30">LIKHITHA</span>
+            </div>
+          </div>
+
+          <h3 class="font-royal font-bold text-3xl sm:text-4xl text-gold-300 mb-2 uppercase text-center">
+            <span class="lang-te telugu-font">సత్యసాయి లిఖిత</span>
+            <span class="lang-en hidden">SATYA SAI LIKHITHA</span>
+          </h3>
+          <p class="text-xs uppercase tracking-wider text-gold-400/90 font-serif mb-4 text-center">
+            <span class="lang-te telugu-font">ఏకైక పుత్రిక</span>
+            <span class="lang-en hidden">Only Daughter</span>
+          </p>
+
+          <div class="space-y-3 text-sm text-gold-100/90 border-t border-gold-500/20 pt-4">
+            <div>
+              <span class="text-xs text-gold-400 block font-serif uppercase tracking-wider">
+                <span class="lang-te telugu-font">తల్లిదండ్రులు:</span>
+                <span class="lang-en hidden">Parents:</span>
+              </span>
+              <p class="font-serif">
+                <span class="lang-te telugu-font">శ్రీ నృసింహదేవర సూర్యప్రకాష్</span>
+                <span class="lang-en hidden">Sri Nrusimhadevara Surya Prakash</span>
+              </p>
+              <p class="font-serif">
+                <span class="lang-te telugu-font">శ్రీమతి వనజ (దివంగతులు)</span>
+                <span class="lang-en hidden">Late Smt. Vanaja</span>
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <span class="text-xs text-gold-400 block font-serif uppercase tracking-wider">
+                <span class="lang-te telugu-font">చిరునామా:</span>
+                <span class="lang-en hidden">Address:</span>
+              </span>
+              <p class="text-xs text-gold-300/80 mt-1">
+                <span class="lang-te telugu-font">డి.నెం. 9-7-175, సాయిరామ్ నగర్, హైస్కూల్ రోడ్, గాజువాక, విశాఖపట్నం</span>
+                <span class="lang-en hidden">D.No. 9-7-175, Sairam Nagar, Highschool Road, Gajuwaka, Visakhapatnam</span>
+              </p>
+              <p class="text-xs text-gold-400 mt-2 font-mono">📞 9052988755, 8885577435</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-gold-500/20 flex items-center justify-between text-xs text-gold-400/80">
+          <span>
+            <span class="lang-te telugu-font">నృసింహదేవర వంశం</span>
+            <span class="lang-en hidden">Nrusimhadevara Family</span>
+          </span>
+          <span>
+            <span class="lang-te telugu-font">గాజువాక</span>
+            <span class="lang-en hidden">Gajuwaka</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Inviting Family & Elders Card -->
+    <div class="mt-8 royal-card-frame p-6 sm:p-8 bg-royal-950/60">
+      <div class="text-center max-w-5xl mx-auto">
+        <span class="text-xs text-gold-400 tracking-widest uppercase font-serif block mb-1">
+          <span class="lang-te telugu-font">పెద్దల దివ్య ఆశీస్సులతో</span>
+          <span class="lang-en hidden">With the Divine Blessings of Elders</span>
+        </span>
+        <h4 class="font-royal text-lg sm:text-xl text-gold-200 mb-4">
+          <span class="lang-te telugu-font">ఆత్మీయ ఆహ్వానం</span>
+          <span class="lang-en hidden">Cordially Inviting You</span>
+        </h4>
+        <p class="text-sm text-gold-100/90 leading-relaxed font-serif">
+          <span class="lang-te telugu-font">
+            <strong>శ్రీ తాతపూడి సూర్యవెంకటరమణమూర్తి &amp; శ్రీమతి వెంకటలక్ష్మి</strong><br>
+            మరియు మా కుటుంబ సభ్యులందరమూ మీ రాకను కోరుచున్నాము.
+          </span>
+          <span class="lang-en hidden">
+            <strong>Sri Tatapudi Surya Venkata Raman Murthy &amp; Smt. Venkata Lakshmi</strong><br>
+            along with our family cordially invite your gracious presence with family and friends on this auspicious occasion.
+          </span>
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gold-500/20 text-xs text-gold-200 text-left">
+          <div class="bg-royal-900/60 p-4 rounded-lg border border-gold-500/20 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-serif block mb-1">
+                <span class="lang-te telugu-font">వరుని తల్లిదండ్రులు</span>
+                <span class="lang-en hidden">Groom's Parents</span>
+              </span>
+              <p class="font-bold text-gold-300 text-sm">
+                <span class="lang-te telugu-font">శ్రీ తాతపూడి కళ్యాణ్ చక్రవర్తి &amp; శ్రీమతి సత్యవతి</span>
+                <span class="lang-en hidden">Sri Tatapudi Kalyan Chakravarthy &amp; Smt. Satyavathi</span>
+              </p>
+              <p class="text-gold-300/70 mt-1">
+                <span class="lang-te telugu-font">వాహిన్ కాజిల్-2, వేపగుంట, వైజాగ్ - 47</span>
+                <span class="lang-en hidden">Vahin Castle-2, Vepagunta, Vizag - 47</span>
+              </p>
+            </div>
+            <p class="text-gold-400 mt-2 font-mono">📞 9652574319, 8978081927</p>
+          </div>
+
+          <div class="bg-royal-900/60 p-4 rounded-lg border border-gold-500/20 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-serif block mb-1">
+                <span class="lang-te telugu-font">వధువు తల్లిదండ్రులు</span>
+                <span class="lang-en hidden">Bride's Parents</span>
+              </span>
+              <p class="font-bold text-gold-300 text-sm">
+                <span class="lang-te telugu-font">శ్రీ నృసింహదేవర సూర్యప్రకాష్ &amp; శ్రీమతి వనజ (దివంగతులు)</span>
+                <span class="lang-en hidden">Sri Nrusimhadevara Surya Prakash &amp; Late Smt. Vanaja</span>
+              </p>
+              <p class="text-gold-300/70 mt-1">
+                <span class="lang-te telugu-font">సాయిరామ్ నగర్, గాజువాక, వైజాగ్</span>
+                <span class="lang-en hidden">Sairam Nagar, Gajuwaka, Vizag</span>
+              </p>
+            </div>
+            <p class="text-gold-400 mt-2 font-mono">📞 9052988755, 8885577435</p>
+          </div>
+
+          <div class="bg-royal-900/60 p-4 rounded-lg border border-gold-500/20 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-serif block mb-1">
+                <span class="lang-te telugu-font">వరుని వైపు పెద్దలు</span>
+                <span class="lang-en hidden">Groom Side Elders</span>
+              </span>
+              <p class="font-bold text-gold-300 text-sm">
+                <span class="lang-te telugu-font">శ్రీ తాతపూడి శ్రీనివాస్ ప్రసాద్ &amp; శ్రీమతి లక్ష్మి</span>
+                <span class="lang-en hidden">Sri Tatapudi Srinivas Prasad &amp; Smt. Lakshmi</span>
+              </p>
+              <p class="text-gold-300/70 mt-1">
+                <span class="lang-te telugu-font">మరియు బంధుమిత్రులు, శ్రేయోభిలాషులు</span>
+                <span class="lang-en hidden">And Relatives &amp; Well-Wishers</span>
+              </p>
+            </div>
+            <p class="text-gold-400/90 font-serif mt-2">
+              <span class="lang-te telugu-font">ఆశీస్సులతో: తాతపూడి కుటుంబం</span>
+              <span class="lang-en hidden">With Blessings: Tatapudi Family</span>
+            </p>
+          </div>
+
+          <div class="bg-royal-900/60 p-4 rounded-lg border border-gold-500/20 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-serif block mb-1">
+                <span class="lang-te telugu-font">వధువు వైపు పెద్దలు</span>
+                <span class="lang-en hidden">Bride Side Elders</span>
+              </span>
+              <p class="font-bold text-gold-300 text-sm">
+                <span class="lang-te telugu-font">శ్రీ నృసింహదేవర సత్యప్రసాద్ &amp; శ్రీమతి నాగలక్ష్మి</span>
+                <span class="lang-en hidden">Sri Nrusimhadevara Satya Prasad &amp; Smt. Naga Lakshmi</span>
+              </p>
+              <p class="text-gold-300/70 mt-1">
+                <span class="lang-te telugu-font">మరియు బంధుమిత్రులు, శ్రేయోభిలాషులు</span>
+                <span class="lang-en hidden">And Relatives &amp; Well-Wishers</span>
+              </p>
+            </div>
+            <p class="text-gold-400/90 font-serif mt-2">
+              <span class="lang-te telugu-font">ఆశీస్సులతో: నృసింహదేవర కుటుంబం</span>
+              <span class="lang-en hidden">With Blessings: Nrusimhadevara Family</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Shubhapatrika Card (Switchable Telugu / English) -->
+  <section class="max-w-4xl mx-auto px-4 py-8">
+    <div class="royal-card-frame p-6 sm:p-10 border-gold-400/40 bg-gradient-to-b from-royal-900 via-royal-950 to-royal-900">
+      <div class="lang-te">
+        <div class="text-center border-b border-gold-500/30 pb-6 mb-6">
+          <p class="text-gold-400 text-sm tracking-widest telugu-font">శ్రీరస్తు &bull; శుభమస్తు &bull; అవిఘ్నమస్తు</p>
+          <h2 class="text-2xl sm:text-3xl font-royal text-gold-300 mt-2 telugu-font">
+            తాతపూడి వారి వివాహ మహోత్సవ ఆహ్వాన శుభపత్రిక
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-gold-100/90 text-sm sm:text-base leading-relaxed telugu-font">
+          <p>
+            శ్రీ తాతపూడి సూర్యవెంకటరమణమూర్తి, శ్రీమతి వెంకటలక్ష్మి దంపతులు వారి వంశపుత్రుడైన అభిషేక్ శర్మ మరియు శ్రీ నృసింహదేవర సూర్యప్రకాష్, శ్రీమతి వనజ దంపతుల కూతురు సత్యసాయి లిఖితల వివాహమును ఎప్పటిలాగే మీరంతా ఆశీస్సులతో జరిపించాలని కోరుకుంటున్నారు.
+          </p>
+
+          <div class="text-center py-4 bg-royal-950/70 border border-gold-500/30 rounded-xl my-4">
+            <p class="text-xs text-gold-400 uppercase tracking-widest">చిరంజీవి</p>
+            <h3 class="text-2xl sm:text-3xl font-bold text-gold-300 my-1">అభిషేక్ శర్మ (ABHISHEK SARMA)</h3>
+            <p class="text-gold-400/80 my-1 font-serif italic text-sm">సహిత</p>
+            <p class="text-xs text-gold-400 uppercase tracking-widest">విశాఖపట్నం, గాజువాక వాస్తవ్యులు</p>
+            <p class="text-xs text-gold-400 uppercase tracking-widest mt-1">చి॥ల॥సౌ॥</p>
+            <h3 class="text-2xl sm:text-3xl font-bold text-gold-300 my-1">సత్యసాయి లిఖిత (SATYA SAI LIKHITHA)</h3>
+          </div>
+
+          <p class="text-center text-gold-200">
+            ఇరువురికి వివాహము జరిపించుటకు పెద్దలము నిశ్చయించియున్నాము. కావున తాతపూడి వివరాల ప్రకారం మీరంతా వచ్చి ఆశీస్సులందించమని కోరుచున్నాము.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+            <div class="p-4 rounded-xl bg-royal-900/80 border border-gold-500/20">
+              <h4 class="text-gold-300 font-bold border-b border-gold-500/20 pb-1 mb-2">సుముహూర్తం:</h4>
+              <p class="text-sm">
+                స్వస్తిశ్రీ చాంద్రమాన శ్రీ పరాభవ నామ సంవత్సర కార్తీక శుద్ధ నవమి, బుధవారం, 18-11-2026 రాత్రి 9:56 గం॥లకు.<br>
+                <strong>శతభిషా నక్షత్రయుక్త కర్కాటక లగ్నము.</strong>
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-royal-900/80 border border-gold-500/20">
+              <h4 class="text-gold-300 font-bold border-b border-gold-500/20 pb-1 mb-2">కల్యాణ వేదిక &amp; విందు:</h4>
+              <p class="text-sm">
+                తేది: <strong>18-11-2026 బుధవారం రాత్రి 7:00 గం॥ల నుండి</strong><br>
+                <strong>"రమేష్ కన్వెన్షన్స్"</strong>, జగదాంబ థియేటర్ ఎదురుగా, దండుబజార్, మహారాణిపేట, విశాఖపట్నం.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lang-en hidden">
+        <div class="text-center border-b border-gold-500/30 pb-6 mb-6">
+          <p class="text-gold-400 text-sm tracking-widest font-serif">SRIRASTHU &bull; SUBHAMASTHU &bull; AVIGHNAMASTHU</p>
+          <h2 class="text-2xl sm:text-3xl font-royal text-gold-300 mt-2 uppercase">
+            Tatapudi Family Wedding Invitation
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-gold-100/90 text-sm sm:text-base leading-relaxed font-serif">
+          <p class="text-center">
+            Sri Tatapudi Surya Venkata Raman Murthy &amp; Smt. Venkata Lakshmi cordially invite your gracious presence with family and friends to celebrate the wedding ceremony of their nephew:
+          </p>
+
+          <div class="text-center py-4 bg-royal-950/70 border border-gold-500/30 rounded-xl my-4">
+            <p class="text-xs text-gold-400 uppercase tracking-widest">Chy.</p>
+            <h3 class="text-2xl sm:text-3xl font-bold text-gold-300 my-1">ABHISHEK SARMA</h3>
+            <p class="text-xs text-gold-400">Elder son of Sri Tatapudi Kalyan Chakravarthy &amp; Smt. Satyavathi</p>
+            <p class="text-gold-400/80 my-1 font-serif italic text-sm">with</p>
+            <p class="text-xs text-gold-400 uppercase tracking-widest">Chy. La. Sow.</p>
+            <h3 class="text-2xl sm:text-3xl font-bold text-gold-300 my-1">SATYA SAI LIKHITHA</h3>
+            <p class="text-xs text-gold-400">Only daughter of Sri Nrusimhadevara Surya Prakash &amp; Late Smt. Vanaja (Gajuwaka, VSP)</p>
+          </div>
+
+          <p class="text-center text-gold-200">
+            Please join us to bless the newly wedded couple as they embark on their sacred lifelong journey.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 text-left">
+            <div class="p-4 rounded-xl bg-royal-900/80 border border-gold-500/20">
+              <h4 class="text-gold-300 font-bold border-b border-gold-500/20 pb-1 mb-2 font-royal">Auspicious Muhurtham:</h4>
+              <p class="text-sm">
+                <strong>Wednesday, 18th November 2026 at Night 9:56 PM</strong> in Satabhisha Nakshatrayukta Karkataka Lagnam.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-royal-900/80 border border-gold-500/20">
+              <h4 class="text-gold-300 font-bold border-b border-gold-500/20 pb-1 mb-2 font-royal">Venue &amp; Reception Dinner:</h4>
+              <p class="text-sm">
+                Dinner follows from <strong>7:00 PM onwards</strong><br>
+                <strong>Ramesh Conventions</strong>, Opp. Jagadamba Theatre, Dandu Bazar, Maharanipeta, Visakhapatnam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wedding Events Itinerary Section -->
+  <section id="events" class="max-w-5xl mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+      <span class="text-gold-400 text-xs font-serif tracking-[0.25em] uppercase block mb-1">
+        <span class="lang-te telugu-font">శుభకార్య ప్రణాళిక</span>
+        <span class="lang-en hidden">Auspicious Schedule</span>
+      </span>
+      <h2 class="font-royal text-2xl sm:text-3xl md:text-4xl text-gold-200">
+        <span class="lang-te telugu-font">శుభకార్య వివరాలు</span>
+        <span class="lang-en hidden">Wedding Celebrations</span>
+      </h2>
+      <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="royal-card-frame p-6 sm:p-8 flex flex-col justify-between hover:scale-[1.01] transition-transform">
+        <div>
+          <div class="flex items-center justify-between text-gold-400 mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-serif bg-gold-500/10 border border-gold-500/30">
+              <span class="lang-te telugu-font">ప్రీతి భోజనము</span>
+              <span class="lang-en hidden">Celebration Dinner</span>
+            </span>
+            <i data-lucide="utensils" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-royal text-xl sm:text-2xl text-gold-300 mb-1">
+            <span class="lang-te telugu-font">కల్యాణ ప్రీతి విందు</span>
+            <span class="lang-en hidden">Dinner &amp; Reception</span>
+          </h3>
+          <p class="text-gold-200/90 text-sm font-serif mb-4">
+            <span class="lang-te telugu-font">18 నవంబర్ 2026, బుధవారం &bull; రాత్రి 7:00 గం॥ల నుండి</span>
+            <span class="lang-en hidden">Wednesday, 18th November 2026 &bull; From 7:00 PM onwards</span>
+          </p>
+          <p class="text-xs sm:text-sm text-gold-100/80 leading-relaxed">
+            <span class="lang-te telugu-font">రమేష్ కన్వెన్షన్స్ ప్రాంగణంలో బంధుమిత్రులందరికీ ఘనమైన విందు మరియు స్వాగతోత్సవం.</span>
+            <span class="lang-en hidden">Join the family for a lavish Andhra wedding feast and festive welcome celebration before the divine wedding rituals commence.</span>
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-gold-500/20 text-xs text-gold-300/80 flex items-center space-x-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-gold-400 flex-shrink-0"></i>
+          <span>
+            <span class="lang-te telugu-font">డైనింగ్ హాల్, రమేష్ కన్వెన్షన్స్, మహారాణిపేట</span>
+            <span class="lang-en hidden">Dining Arena, Ramesh Conventions, Maharanipeta</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="royal-card-frame p-6 sm:p-8 border-gold-400 flex flex-col justify-between gold-glow hover:scale-[1.01] transition-transform">
+        <div>
+          <div class="flex items-center justify-between text-gold-400 mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-serif bg-gold-500/20 border border-gold-400 font-bold text-gold-200">
+              <span class="lang-te telugu-font">కల్యాణ మహోత్సవం</span>
+              <span class="lang-en hidden">Kalyana Mahotsavam</span>
+            </span>
+            <i data-lucide="sparkles" class="w-5 h-5 text-gold-300"></i>
+          </div>
+          <h3 class="font-royal text-xl sm:text-2xl text-gold-300 mb-1">
+            <span class="lang-te telugu-font">శుభ లగ్న సుముహూర్తం</span>
+            <span class="lang-en hidden">The Sacred Muhurtham</span>
+          </h3>
+          <p class="text-gold-200/90 text-sm font-serif mb-4">
+            <span class="lang-te telugu-font">18 నవంబర్ 2026, బుధవారం &bull; రాత్రి 9:56 గం॥లకు</span>
+            <span class="lang-en hidden">Wednesday, 18th November 2026 &bull; Night 9:56 PM</span>
+          </p>
+          <p class="text-xs sm:text-sm text-gold-100/80 leading-relaxed">
+            <span class="lang-te telugu-font">జీలకర్ర-బెల్లం, మాంగల్యధారణ, సప్తపది శాస్త్రోక్తంగా జరుగుతుంది.</span>
+            <span class="lang-en hidden">The holy union, Jeelakarra-Bellam dharana, Mangalasutra dharana, and Saptapadi vows in <em>Satabhisha Nakshatrayukta Karkataka Lagnam</em>.</span>
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-gold-500/20 text-xs text-gold-300/80 flex items-center space-x-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-gold-400 flex-shrink-0"></i>
+          <span>
+            <span class="lang-te telugu-font">ప్రధాన కల్యాణ మండపం, రమేష్ కన్వెన్షన్స్, వైజాగ్</span>
+            <span class="lang-en hidden">Main Kalyana Mandapam, Ramesh Conventions, VSP</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 royal-card-frame p-6 sm:p-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="text-xs uppercase tracking-widest text-gold-400 font-serif">
+            <span class="lang-te telugu-font">వివాహ వేదిక</span>
+            <span class="lang-en hidden">Wedding Destination</span>
+          </span>
+          <h3 class="text-2xl font-royal text-gold-200">
+            <span class="lang-te telugu-font">రమేష్ కన్వెన్షన్స్</span>
+            <span class="lang-en hidden">Ramesh Conventions</span>
+          </h3>
+          <p class="text-sm text-gold-300/90 font-serif">
+            <span class="lang-te telugu-font">జగదాంబ థియేటర్ ఎదురుగా, దండుబజార్, మహారాణిపేట, విశాఖపట్నం</span>
+            <span class="lang-en hidden">Opposite Jagadamba Theatre, Dandu Bazar, Maharanipeta, Visakhapatnam (VSP), Andhra Pradesh</span>
+          </p>
+          <p class="text-xs text-gold-400/80 italic">
+            <span class="lang-te telugu-font">గుర్తు: జగదాంబ థియేటర్ జంక్షన్ ఎదురుగా</span>
+            <span class="lang-en hidden">Landmark: Facing the iconic Jagadamba Theatre Junction</span>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://maps.app.goo.gl/picNUgGGsuXviuE1A" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-gold-500 text-royal-950 font-serif font-bold text-xs uppercase tracking-wider flex items-center space-x-2 hover:shadow-lg transition-all">
+            <i data-lucide="navigation" class="w-4 h-4"></i>
+            <span class="lang-te telugu-font">గూగుల్ మ్యాప్స్</span>
+            <span class="lang-en hidden">Google Maps</span>
+          </a>
+          <button onclick="copyVenueAddress()" class="px-5 py-2.5 rounded-full border border-gold-500/40 bg-royal-900 text-gold-200 font-serif text-xs uppercase tracking-wider flex items-center space-x-2 hover:bg-gold-500/10 transition-all">
+            <i data-lucide="copy" class="w-4 h-4 text-gold-400"></i>
+            <span id="copy-btn-text">
+              <span class="lang-te telugu-font">చిరునామా కాపీ చేయండి</span>
+              <span class="lang-en hidden">Copy Address</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Saptapadi Experience -->
+  <section id="saptapadi" class="max-w-5xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center space-x-2 text-gold-400 text-xs font-serif tracking-[0.25em] uppercase mb-1">
+        <span>👣</span>
+        <span>
+          <span class="lang-te telugu-font">వివాహ పత్రికలోని 7 పవిత్ర ప్రతిజ్ఞలు</span>
+          <span class="lang-en hidden">The 7 Sacred Vows From The Wedding Card</span>
+        </span>
+        <span>👣</span>
+      </div>
+      <h2 class="font-royal text-2xl sm:text-3xl md:text-4xl text-gold-200">
+        <span class="lang-te telugu-font">సప్తపది</span>
+        <span class="lang-en hidden">Saptapadi (7 Sacred Vows)</span>
+      </h2>
+      <p class="text-xs sm:text-sm text-gold-300/80 max-w-xl mx-auto mt-2 font-serif">
+        <span class="lang-te telugu-font">అగ్నిసాక్షిగా వధూవరులు వేసే ఏడు అడుగుల దివ్య అర్థాలను అన్వేషించండి.</span>
+        <span class="lang-en hidden">Click or tap through the seven steps of eternal companionship walking hand-in-hand around the sacred Agni.</span>
+      </p>
+      <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-3"></div>
+    </div>
+
+    <div class="royal-card-frame p-6 sm:p-10 gold-glow">
+      <div class="flex items-center justify-between mb-8 overflow-x-auto pb-2 scrollbar-none gap-2">
+        <button onclick="goToStep(0)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-gold-500 text-royal-950 border border-gold-400" data-step="0">1</button>
+        <button onclick="goToStep(1)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400/50" data-step="1">2</button>
+        <button onclick="goToStep(2)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400/50" data-step="2">3</button>
+        <button onclick="goToStep(3)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400/50" data-step="3">4</button>
+        <button onclick="goToStep(4)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400/50" data-step="4">5</button>
+        <button onclick="goToStep(5)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400/50" data-step="5">6</button>
+        <button onclick="goToStep(6)" class="step-nav-btn flex-1 min-w-[3rem] py-2 rounded-lg text-xs font-serif font-bold transition bg-royal-900 text-gold-300 border border-gold-500/20 hover:border-gold-400/50" data-step="6">7</button>
+      </div>
+
+      <div id="step-content-card" class="text-center py-6 px-4 max-w-xl mx-auto min-h-[220px] flex flex-col justify-center transition-all duration-300">
+        <div class="text-3xl sm:text-4xl mb-3" id="step-icon">👣</div>
+        <span class="text-xs uppercase tracking-widest text-gold-400 font-serif font-bold" id="step-number">1వ అడుగు</span>
+        <h3 class="text-2xl sm:text-3xl font-royal text-gold-200 my-2" id="step-title-main">సర్వదా, సర్వత్ర కలసి ఉండుట</h3>
+        <p class="text-sm sm:text-base text-gold-300 font-serif mb-3" id="step-title-sub">To be together forever</p>
+        <p class="text-xs sm:text-sm text-gold-100/80 italic font-serif" id="step-desc">
+          "జీవితంలో ప్రతి అడుగులోనూ ఒకరికొకరు తోడుగా ఉంటూ, అచంచలమైన ప్రేమతో కలిసి జీవించాలి."
+        </p>
+      </div>
+
+      <div class="flex items-center justify-between mt-6 pt-6 border-t border-gold-500/20">
+        <button onclick="prevStep()" class="px-4 py-2 rounded-full border border-gold-500/30 text-gold-300 hover:bg-gold-500/10 text-xs font-serif uppercase tracking-wider flex items-center space-x-1">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          <span>
+            <span class="lang-te telugu-font">మునుపటి అడుగు</span>
+            <span class="lang-en hidden">Previous Step</span>
+          </span>
+        </button>
+        
+        <button onclick="triggerBlessingConfetti(event)" class="px-4 py-2 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-200 text-xs font-serif tracking-wider hover:bg-gold-500/30 transition-all flex items-center space-x-2">
+          <span>🌸</span>
+          <span>
+            <span class="lang-te telugu-font">అక్షింతలు వేయండి</span>
+            <span class="lang-en hidden">Shower Akshathalu</span>
+          </span>
+        </button>
+
+        <button onclick="nextStep()" class="px-4 py-2 rounded-full border border-gold-500/30 text-gold-300 hover:bg-gold-500/10 text-xs font-serif uppercase tracking-wider flex items-center space-x-1">
+          <span>
+            <span class="lang-te telugu-font">తర్వాతి అడుగు</span>
+            <span class="lang-en hidden">Next Step</span>
+          </span>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Secret Keys Trivia Game -->
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center space-x-2 text-gold-400 text-xs font-serif tracking-[0.25em] uppercase mb-1">
+        <span>🗝️</span>
+        <span>
+          <span class="lang-te telugu-font">వివాహ సంప్రదాయ క్విజ్</span>
+          <span class="lang-en hidden">Interactive Wedding Trivia</span>
+        </span>
+        <span>🗝️</span>
+      </div>
+      <h2 class="font-royal text-2xl sm:text-3xl md:text-4xl text-gold-200">
+        <span class="lang-te telugu-font">కల్యాణ రహస్య కీలు</span>
+        <span class="lang-en hidden">Secret Keys to Eternal Love</span>
+      </h2>
+      <p class="text-xs sm:text-sm text-gold-300/80 max-w-lg mx-auto mt-2 font-serif">
+        <span class="lang-te telugu-font">తెలుగు వివాహ సంప్రదాయ ప్రశ్నలకు సమాధానమిచ్చి ఆశీస్సులను పొందండి.</span>
+        <span class="lang-en hidden">Solve the Telugu wedding cultural clues to unlock four sacred blessings for ABHISHEK and LIKHITHA.</span>
+      </p>
+      <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="royal-card-frame p-6" id="clue-box-1">
+        <div class="flex items-center justify-between mb-3 text-gold-400">
+          <span class="text-xs font-serif font-bold uppercase tracking-wider">
+            <span class="lang-te telugu-font">ప్రశ్న 1</span>
+            <span class="lang-en hidden">Clue #1</span>
+          </span>
+          <span id="clue-status-1" class="text-xs px-2 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300">
+            <span class="lang-te telugu-font">లాక్ చేయబడింది 🔒</span>
+            <span class="lang-en hidden">Locked 🔒</span>
+          </span>
+        </div>
+        <p class="text-sm text-gold-100 font-serif mb-3">
+          <span class="lang-te telugu-font">"మంగళస్నానంలో వధూవరులకు పూసే పవిత్రమైన పసుపు వర్ణ ద్రవ్యము ఏమిటి?"</span>
+          <span class="lang-en hidden">"What sacred yellow paste is applied to the bride and groom during Mangalasnanam?"</span>
+        </p>
+        <div class="flex items-center space-x-2 mt-4">
+          <input id="answer-1" type="text" class="flex-1 rounded-lg border border-gold-500/30 bg-royal-900/80 text-gold-100 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold-400" placeholder="Your answer">
+          <button onclick="checkAnswer(1)" class="px-3 py-2 rounded-lg bg-gold-500 text-royal-950 text-xs font-bold uppercase tracking-wide">Check</button>
+        </div>
+      </div>
+
+      <div class="royal-card-frame p-6" id="clue-box-2">
+        <div class="flex items-center justify-between mb-3 text-gold-400">
+          <span class="text-xs font-serif font-bold uppercase tracking-wider">
+            <span class="lang-te telugu-font">ప్రశ్న 2</span>
+            <span class="lang-en hidden">Clue #2</span>
+          </span>
+          <span id="clue-status-2" class="text-xs px-2 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300">
+            <span class="lang-te telugu-font">లాక్ చేయబడింది 🔒</span>
+            <span class="lang-en hidden">Locked 🔒</span>
+          </span>
+        </div>
+        <p class="text-sm text-gold-100 font-serif mb-3">
+          <span class="lang-te telugu-font">"వివాహ సమయంలో వధూవరులు అగ్ని చుట్టూ నడిచే ప ritual ఏమిటి?"</span>
+          <span class="lang-en hidden">"What ritual do the couple perform while circling the sacred fire?"</span>
+        </p>
+        <div class="flex items-center space-x-2 mt-4">
+          <input id="answer-2" type="text" class="flex-1 rounded-lg border border-gold-500/30 bg-royal-900/80 text-gold-100 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold-400" placeholder="Your answer">
+          <button onclick="checkAnswer(2)" class="px-3 py-2 rounded-lg bg-gold-500 text-royal-950 text-xs font-bold uppercase tracking-wide">Check</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script>
-    const weddingVideo = document.getElementById('wedding-video');
-    const weddingAudio = document.getElementById('wedding-audio');
-    let musicWasPlayingBeforeVideo = false;
+    const state = {
+      lang: 'te',
+      currentStep: 0,
+      totalSteps: 7,
+      unlocked: 0,
+      answerMap: {
+        1: ['కుంకుమ', 'kumkum', ' turmeric', 'turmeric powder'],
+        2: ['సప్తపది', 'saptapadi', 'seven vows']
+      }
+    };
 
-    if (weddingVideo && weddingAudio) {
-      weddingVideo.addEventListener('play', function () {
-        musicWasPlayingBeforeVideo = !weddingAudio.paused;
-        if (musicWasPlayingBeforeVideo) {
-          weddingAudio.pause();
+    const saptapadiData = [
+      {
+        icon: '👣',
+        number: '1వ అడుగు',
+        title: 'సర్వదా, సర్వత్ర కలసి ఉండుట',
+        subtitle: 'To be together forever',
+        desc: 'జీవితంలో ప్రతి అడుగులోనూ ఒకరికొకరు తోడుగా ఉంటూ, అచంచలమైన ప్రేమతో కలిసి జీవించాలి.'
+      },
+      {
+        icon: '🌾',
+        number: '2వ అడుగు',
+        title: 'పారిరుమనే ధర్మం',
+        subtitle: 'To build a righteous home',
+        desc: 'సత్ప్రవర్తన, సహనం, ధర్మబద్దమైన జీవితం మరియు ఒకటిగా నడచే బాధ్యతను నెరవేర్చాలి.'
+      },
+      {
+        icon: '🌼',
+        number: '3వ అడుగు',
+        title: 'సంపద మరియు సమృద్ధి',
+        subtitle: 'To prosper together',
+        desc: 'సమృద్ధి, శ్రేయస్సు, ఆరోగ్యం, మరియు సంతోషభరితమైన కుటుంబ జీవితాన్ని కలిసి పెంపొందించాలి.'
+      },
+      {
+        icon: '🌙',
+        number: '4వ అడుగు',
+        title: 'స్నేహం మరియు కరుణ',
+        subtitle: 'To nurture compassion',
+        desc: 'స్నేహాన్నీ, కరుణనూ, సహనం, మరియు చిత్తశుద్ధితో పరస్పర సహకారాన్ని పెంచుకోవాలి.'
+      },
+      {
+        icon: '✨',
+        number: '5వ అడుగు',
+        title: 'సన్మాన మరియు సేవ',
+        subtitle: 'To respect and serve',
+        desc: 'పరస్పర గౌరవం, సేవ, మరియు నిబద్ధతతో జీవితాన్ని అద్భుతంగా నిర్మించుకోవాలి.'
+      },
+      {
+        icon: '🔥',
+        number: '6వ అడుగు',
+        title: 'శ్రేయస్సు మరియు మానవీయ జీవితం',
+        subtitle: 'To seek well-being',
+        desc: 'సార్వభౌమమైన ఆరోగ్యము, సాత్విక జీవనం, మరియు శ్రేయోభిలాషతో సహజీవనం కొనసాగించాలి.'
+      },
+      {
+        icon: '💍',
+        number: '7వ అడుగు',
+        title: 'చిరకాల మైత్రి',
+        subtitle: 'To be united for eternity',
+        desc: 'ఏడాది జీవితాలన్నిటినీ, ఒకే అంగికం నెరవేర్చగా, మైత్రబంధంతో కలిసి జీవించాలి.'
+      }
+    ];
+
+    function setLanguage(lang) {
+      state.lang = lang;
+      document.querySelectorAll('.lang-te').forEach(el => el.classList.toggle('hidden', lang !== 'te'));
+      document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang !== 'en'));
+
+      document.getElementById('lang-te').classList.toggle('bg-gold-500', lang === 'te');
+      document.getElementById('lang-te').classList.toggle('text-royal-950', lang === 'te');
+      document.getElementById('lang-en').classList.toggle('bg-gold-500', lang === 'en');
+      document.getElementById('lang-en').classList.toggle('text-royal-950', lang === 'en');
+    }
+
+    function toggleCustomMusic() {
+      const audio = document.getElementById('wedding-audio');
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      } else {
+        audio.pause();
+      }
+    }
+
+    function triggerBlessingConfetti(event) {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 110,
+          spread: 80,
+          origin: { y: 0.7 },
+          colors: ['#f7d87b', '#d9a63b', '#f5ebd5', '#fff4cc']
+        });
+      }
+      if (event) event.preventDefault();
+    }
+
+    function goToStep(index) {
+      state.currentStep = (index + state.totalSteps) % state.totalSteps;
+      const step = saptapadiData[state.currentStep];
+      document.getElementById('step-icon').textContent = step.icon;
+      document.getElementById('step-number').textContent = step.number;
+      document.getElementById('step-title-main').textContent = step.title;
+      document.getElementById('step-title-sub').textContent = step.subtitle;
+      document.getElementById('step-desc').textContent = step.desc;
+
+      document.querySelectorAll('.step-nav-btn').forEach((btn, i) => {
+        const active = i === state.currentStep;
+        btn.classList.toggle('bg-gold-500', active);
+        btn.classList.toggle('text-royal-950', active);
+        btn.classList.toggle('border-gold-400', active);
+        if (!active) {
+          btn.classList.remove('text-royal-950');
+          btn.classList.add('text-gold-300');
+          btn.classList.add('bg-royal-900');
+          btn.classList.add('border-gold-500/20');
         }
       });
+    }
 
-      ['pause', 'ended'].forEach(function (eventName) {
-        weddingVideo.addEventListener(eventName, function () {
-          if (musicWasPlayingBeforeVideo) {
-            weddingAudio.play().catch(() => {});
-            musicWasPlayingBeforeVideo = false;
-          }
-        });
-      });
+    function nextStep() {
+      goToStep(state.currentStep + 1);
+    }
+
+    function prevStep() {
+      goToStep(state.currentStep - 1);
+    }
+
+    function checkAnswer(number) {
+      const input = document.getElementById('answer-' + number);
+      const status = document.getElementById('clue-status-' + number);
+      const answer = (input.value || '').trim().toLowerCase();
+      const accepted = state.answerMap[number] || [];
+
+      if (accepted.some(v => v === answer || v.includes(answer) || answer.includes(v))) {
+        status.innerHTML = '<span class="lang-te telugu-font">సరైన సమాధానం ✅</span><span class="lang-en hidden">Correct ✅</span>';
+        input.disabled = true;
+        input.classList.add('border-green-400');
+      } else {
+        status.innerHTML = '<span class="lang-te telugu-font">చెప్పు మరలా ✨</span><span class="lang-en hidden">Try again ✨</span>';
+      }
+    }
+
+    function addToCalendar() {
+      const start = new Date('2026-11-18T21:56:00+05:30');
+      const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
+      const title = 'ABHISHEK & LIKHITHA Wedding Muhurtham';
+      const details = 'Wedding ceremony and celebration';
+      const location = 'Ramesh Conventions, Visakhapatnam';
+      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${end.toISOString().replace(/[-:]/g, '').split('.')[0]}Z&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+      window.open(url, '_blank');
+    }
+
+    function copyVenueAddress() {
+      const text = 'Ramesh Conventions, Opposite Jagadamba Theatre, Dandu Bazar, Maharanipeta, Visakhapatnam';
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-btn-text');
+        if (btn) {
+          btn.innerHTML = '<span class="lang-te telugu-font">కాపీ అయింది ✅</span><span class="lang-en hidden">Copied ✅</span>';
+        }
+      }).catch(() => {});
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage('te');
+      goToStep(0);
+      if (window.lucide) lucide.createIcons();
+    });
+
+    const audio = document.getElementById('wedding-audio');
+    if (audio) {
+      audio.volume = 0.6;
+      audio.play().catch(() => {});
     }
   </script>
 </body>
